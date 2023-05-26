@@ -1,5 +1,5 @@
-name: 'Keyword Releaser Action'
-description: 'Creates releases based on a keyword'
+name: 'Commit Keyword Releaser Action'
+description: 'Creates releases based on a keyword in Commit Message'
 runs:
    using: 'docker'
    image: 'Dockerfile'
