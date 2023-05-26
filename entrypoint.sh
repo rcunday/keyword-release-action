@@ -37,12 +37,12 @@ then
     else
         # echo $DATA | http POST $URL $TOKEN | jq .
     curl -L \
-    -X POST \
     -H "Accept: application/vnd.github+json" \
-    -H $TOKEN \
+    -H "$(TOKEN)" \
     -H "X-GitHub-Api-Version: 2022-11-28" \
-     $URL \
-    -d $DATA
+    -X POST \
+    --data "$(DATA)" \
+    "$(URL)"
     fi
 # otherwise
 else
