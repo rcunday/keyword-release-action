@@ -38,11 +38,11 @@ then
         # echo $DATA | http POST $URL $TOKEN | jq .
     curl -L \
     -H "Accept: application/vnd.github+json" \
-    -H "$(TOKEN)" \
+    -H "${TOKEN}" \
     -H "X-GitHub-Api-Version: 2022-11-28" \
     -X POST \
-    --data "$(DATA)" \
-    "$(URL)"
+    --data "${DATA}" \
+    "${URL}"
     fi
 # otherwise
 else
