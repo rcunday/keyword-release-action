@@ -29,12 +29,13 @@ then
     DATA="${DATA} $(printf '"draft":false, "prerelease":false}')"
 
     URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/releases"
+    TOKEN="Authorization: Token ${GITHUB_TOKEN}"
 
     if [[ "${LOCAL_TEST}" == *"true"* ]];
     then
         echo "## [TESTING] Keyword was found but no release was created."
     else
-        echo $DATA | http -v POST $URL "Authorization: Token ${GITHUB_TOKEN}" | jq .
+        echo $DATA | http POST $URL $TOKEN | jq .
     fi
 # otherwise
 else
